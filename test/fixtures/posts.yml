@@ -3,9 +3,9 @@
 one:
   title: MyString
   content: MyText
-  post_category: 
+  category_id: 1
 
 two:
   title: MyString
   content: MyText
-  post_category: 
+  category_id: 1
