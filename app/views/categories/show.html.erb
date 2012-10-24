@@ -1,0 +1,12 @@
+<h1>
+<%= @category.name %>
+</h1>
+<br/>
+<% @posts.each do |p|  %>
+  <%= p.title%>
+  <br/>
+  <%= p.content%><br/><br/>
+<% end %>
+<br/>
+<br/>
+<%= link_to 'New Post', new_category_post_path(@category) %>
