@@ -3,8 +3,9 @@
 </h1>
 <br/>
 <% @posts.each do |p|  %>
-  <%= p.title%>
-  <br/>
+  <h2>
+    <%= p.title%>
+  </h2>
   <%= p.content%><br/><br/>
 <% end %>
 <br/>
