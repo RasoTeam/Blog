@@ -10,8 +10,8 @@ group :development do
  gem 'sqlite3'
 end
 
-group :production
-  gem 'pg'
+group :production do
+#  gem 'pg'
 end
 
 
