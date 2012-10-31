@@ -13,10 +13,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-/config/environment
-/config/locales
-/config/initializers
-/config
 *.swp
 # Ignore redcar configs
 ._redcar/
