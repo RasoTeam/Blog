@@ -20,9 +20,9 @@ body
 }
 
 @font-face{  
-    font-family: Socialico;
+    /*font-family: Socialico;*/
 /*    src: url('fonts/creampuff.eot'); /* For IE */ 
-    src: local('socialico'), url('fonts/socialico.ttf') format('truetype'); /* For non-IE */ 
+    /*src: local('socialico'), url('fonts/socialico.ttf') format('truetype'); /* For non-IE */ 
 } 
 
 
@@ -163,7 +163,7 @@ body
 
 .social-icons
 {
-	font-family: 'Socialico';
+   /* font-family: 'Socialico'; */
 	font-size: 22pt;
 	margin-top: 15px;
 	float: left;
