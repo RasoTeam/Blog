@@ -14,17 +14,9 @@
 body
 {
 	margin: 0px;
-    /*background-image: url('back.png'); /* Padrao fundo */
 	background-repeat: repeat;
 	background-image: url('back.png'); /* Padrao fundo */
 }
-
-@font-face{  
-    /*font-family: Socialico;*/
-/*    src: url('fonts/creampuff.eot'); /* For IE */ 
-    /*src: local('socialico'), url('fonts/socialico.ttf') format('truetype'); /* For non-IE */ 
-} 
-
 
 
 #banner /* Div zona do Banner`*/ 
