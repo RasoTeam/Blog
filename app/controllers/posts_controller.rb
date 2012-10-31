@@ -25,4 +25,10 @@ class PostsController < ApplicationController
     end
   end
    
+  def destroy
+    @post = Post.find(params[:id])
+    c = @post.category_id
+    @post.destroy
+    redirect_to category_path(c)
+  end
 end
