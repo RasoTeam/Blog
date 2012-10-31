@@ -1,6 +1,19 @@
-<h1>Categories<h1>
+			<div id="categories">
+        
+        <div class="category">
+         Hi
+				</div>
+        
 
-<% @categories.each do |c| %>
-  <%= link_to c.name, category_path(c) %>
-  <br/>
-<% end %>
+				<div class="welcome">
+					Welcome, Admin
+				</div>
+				<div class="category">
+					<a href="/posts/new">New Post</a>
+				</div>
+				<div class="category">
+					<a href="/logout" data-method="delete" rel="nofollow">Logout</a>
+
+				</div>
+			</div>
+

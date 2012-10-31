@@ -1,13 +1,13 @@
 <%= form_for([@category, @category.posts.build]) do |form| %>
-  <div>
+  <div class="field">
     <%= form.label :title %> <br/>
     <%= form.text_field :title %>
   </div>
-  <div>
+  <div class="field">
     <%= form.label :content %> <br/>
     <%= form.text_field :content %>
   </div>
-  <div>
+  <div class="actions" id="post_submit">
     <%= form.submit %>
   </div>
 <% end %>

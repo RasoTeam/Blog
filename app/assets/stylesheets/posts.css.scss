@@ -1,3 +1,101 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.post-title
+{
+	margin-bottom: 10px;
+}
+
+.post-title-text
+{
+	font-family: 'Comfortaa', cursive;
+	font-size: 27px;
+	padding-right: 10px;
+}
+
+.post-title-text a:visited, 
+.post-title-text a
+{
+	color: black;
+	text-decoration: none;
+}
+
+.post-title-text a:hover
+{
+	background-color: transparent;
+	text-decoration: underline;
+}
+
+.post-content
+{
+	font-family: /*'Droid Sans'*/, 'Nobile', sans-serif;
+	font-size: 9pt;
+}
+
+.comment-count a
+{
+	margin-top: 10px;
+	color: #61add1;
+	font-weight: bold;
+	float: right;
+	margin-bottom: 5px;
+	font-family: 'Droid Sans', 'Nobile', sans-serif;
+}
+
+.date
+{
+	font-family: 'Droid Sans', 'Nobile', sans-serif;
+	font-size: 9pt;
+	color: #7d7d7d;
+	margin-top: 5px;
+	float: right;
+	clear: right;
+}
+
+
+
+.welcome
+{
+	font-family: 'Comfortaa', cursive;
+	font-size: 12pt;
+	margin-top: 25px;
+	margin-left: 10px; 
+}
+
+#new_post, .edit_post
+{
+	text-align: center;
+}
+
+#post_title
+{
+	font-size: 15pt;
+	height: 24px;
+	width: 90%;
+	padding: 10px;
+}
+
+#post_content
+{
+	width: 90%;
+	padding: 10px;
+	font-family: verdana, arial, helvetica, sans-serif
+}
+
+#post_category, #post_submit
+{
+	text-align: left;
+}
+
+#post_category_id, #post_submit input
+{
+	font-size: 13pt;
+	padding: 5px;
+	margin-left: 15px;
+}
+
+.error_list
+{
+	color: #D80303;
+	text-align: left;
+}

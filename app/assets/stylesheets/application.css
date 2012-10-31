@@ -10,4 +10,275 @@
  *
  *= require_self
  *= require_tree .
- */
+*/
+body
+{
+	margin: 0px;
+    /*background-image: url('back.png'); /* Padrao fundo */
+	background-repeat: repeat;
+	background-image: url('back.png'); /* Padrao fundo */
+}
+
+@font-face{  
+    font-family: Socialico;
+/*    src: url('fonts/creampuff.eot'); /* For IE */ 
+    src: local('socialico'), url('fonts/socialico.ttf') format('truetype'); /* For non-IE */ 
+} 
+
+
+
+#banner /* Div zona do Banner`*/ 
+{
+	height: 122px; /* Altura da zona do Banner */
+}
+
+#banner a,
+#banner a:hover,
+#banner a:visited
+{
+	text-decoration: none;
+	background-color: transparent;
+}
+
+/*#categories
+{
+	margin-top: 10px;
+}*/
+
+#body-left
+{
+	width: 536px;
+	float: left;
+	background-color: #d4d4d4;
+	padding: 25px;
+	margin-bottom: 10px;
+}
+
+#body-right
+{
+	width: 200px;
+	float: right;
+	/*background-color: #d4d4d4;*/
+	min-height: 500px;
+}
+
+.category
+{
+	background-color: #b7b7b7;
+	font-family: 'Comfortaa', cursive;
+	font-size: 12pt;
+	margin-bottom: 3px;
+	padding: 8px;
+	cursor: pointer;
+	-webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s; /* transicao entre hover ou nao */
+    border-bottom: 2px solid white;
+    box-shadow: 10px 7px;
+}
+
+.category:hover
+{
+	background-color: #7A7979;
+}
+.category:hover a,
+.category:hover a:visited
+{
+	color: white;
+}
+
+.category a,
+.category a:visited
+{
+	text-decoration: none;
+	color: black;
+}
+
+.category a:hover
+{
+	background-color: transparent;
+	color: white;
+}
+
+#search /* Div da barra azul */
+{
+	height: 45px; /* Altura da barra azul onde se encontra a cx. de pesquisa */
+	background-color: #61add1;
+	text-align: right; /* Alinhamento da cx. de pesquisa à direita */
+}
+
+#banner, #posts, #text-box-search /* Aplicado aos 3 elementos */
+{
+	width: 800px; /* Define a largura do blog em si */
+	margin: 0 auto; /* Método para centrar o conteúdo */
+}
+
+#text-box-search /* Enclosing div da search box */
+{
+	padding-top: 10px; /* Espacamento para a parte superior da barra azul */
+	position: relative; /* Elementos filho terao posicoes relativas */
+}
+
+
+.search-button, .clear-button /* botoes search box */
+{
+	height: 20px; /* Tamanho das imagens */
+	width: 20px;
+	cursor: pointer;
+	text-indent: -9999px; /* Método de esconder o texto do Botao */
+	border: 0px; /* Remover a borda */
+	position: absolute; /* Posicao absoluta face ao elemento pai (#text-box-search) */
+	top: 13px; /* Distancia ao topo face a posicao absoluta */
+}
+
+.search-button /* botao de search da search-box */
+{
+	background: transparent url(../images/mag_glass_20px.png) no-repeat; 
+	background: transparent url(../images/mag_glass_20px.png) no-repeat; 
+	right: 173px;
+}
+
+.clear-button /* botao de clear da search-box */
+{
+	background: transparent url(close_20px.png) no-repeat;
+	background: transparent url(../images/close_20px.png) no-repeat;
+	right: 7px;
+}
+
+#query /* text-field da search-box */
+{
+	height: 24px;
+	width: 140px; /* Largura total = 140px + paddings (30+30) = 200px */
+	padding-left: 30px; /* Espacamento para icone de search */
+	padding-right: 30px; /* Espacamento para icone de clear */
+	border-radius: 13px; /* Cantos arredondados */
+	-moz-border-radius: 13px; /* Cantos arredondados Firefox */
+	border: 0px; /* Remocao da Border */
+}
+
+#posts
+{
+	margin-top: 10px; /* Distância da zona dos Posts até à barra azul */
+}
+
+.social-icons
+{
+	font-family: 'Socialico';
+	font-size: 22pt;
+	margin-top: 15px;
+	float: left;
+	/*text-decoration: none;*/
+}
+
+.social-icons a,
+.social-icons a:hover,
+.social-icons a:visited
+{
+	text-decoration: none;	
+	background-color: transparent;
+}
+
+#disqus_thread
+{
+	margin-top: 30px;
+}
+
+.pagination
+{
+	text-align: right;
+}
+
+.pagination,
+.pagination a,
+.pagination a:hover,
+.pagination a:visited
+{
+	margin-top: 10px;
+	color: #61add1;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.pagination .current
+{
+	color: gray;
+}
+.previous_page.disabled
+{
+	display: none;
+}
+
+#post_submit input, #back_button, #login_button
+{
+	font-family: 'Nobile', sans-serif;
+	font-size: 12pt;
+	font-weight: bold;
+	padding:5px;
+  	background-color: #61ADD1;
+  	border: 1px solid #666;
+  	color: #FFF;
+  	text-decoration:none;
+  	cursor: pointer;
+  	margin-top:10px;
+  	border-radius: 3px; /* Cantos arredondados */
+	-moz-border-radius: 3px; /* Cantos arredondados Firefox */
+	-webkit-border-radius: 3px;
+    border: solid 1px #20538D;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s; /* transicao entre hover ou nao */
+}
+
+#back_button
+{
+	background-color: #C2C2C2;
+	border: solid 1px gray;
+}
+
+#back_button:hover, #back_button:focus
+{
+	background-color: gray;
+	border: solid 1px #5F5F5F;
+}
+
+#back_button:active
+{
+	background-color: #5F5F5F;
+}
+
+#post_submit input:hover, 
+#post_submit input:focus,
+#login_button:hover,
+#login_button:focus
+{
+	background-color: #00699B;
+}
+
+#post_submit input:active,
+#login_button:active
+{
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #115D81;
+    border: solid 1px #203E5F;
+}
+
+
+.post
+{
+	margin-bottom: 20px;
+	padding-bottom: 50px;
+	border-bottom: 1px white solid;
+}
+
+
+#login_form
+{
+	width: 50%;
+	margin: 0 auto;
+}

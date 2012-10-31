@@ -18,3 +18,7 @@
 /config/initializers
 /config
 *.swp
+# Ignore redcar configs
+._redcar/
+
+*~
