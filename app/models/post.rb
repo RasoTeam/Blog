@@ -12,7 +12,7 @@
 #
 
 class Post < ActiveRecord::Base
-  attr_accessible :user, :category_id, :content, :title
+  attr_accessible :user_id, :category_id, :content, :title
 
   belongs_to :category
   belongs_to :user

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121030233524) do
+ActiveRecord::Schema.define(:version => 20121031102641) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -19,8 +19,14 @@ ActiveRecord::Schema.define(:version => 20121030233524) do
     t.datetime "updated_at", :null => false
   end
 
-# Could not dump table "posts" because of following StandardError
-#   Unknown type 'reference' for column 'user'
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

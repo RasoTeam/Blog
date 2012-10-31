@@ -7,13 +7,18 @@ class PostsController < ApplicationController
   end
 
   def new
-    @category = Category.find(params[:category_id])
+    if signed_in?
+      @category = Category.find(params[:category_id])
+    else
+      redirect_to root_path
+    end
   end
   
   def create
     @category = Category.find(params[:category_id])
-    @posts = @category.posts.create(params[:post])
-    if @posts.save 
+    @post = @category.posts.create(params[:post])
+    @post.user_id = current_user.id
+    if @post.save 
       redirect_to @category
     else 
       render 'new'
