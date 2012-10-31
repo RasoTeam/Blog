@@ -1,0 +1,6 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.content %></p>
+<p><%= time_ago_in_words(@post.created_at) %> </p>
+<% if signed_in? %>
+  <p><%= @post.user %></p>
+<% end %>

@@ -1,4 +1,6 @@
 Blogapp::Application.routes.draw do
+  get "posts/show"
+
   root :to => 'categories#index'
   resources :users 
   resources :sessions, :only => [:new, :create, :destroy]

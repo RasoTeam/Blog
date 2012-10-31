@@ -1,4 +1,11 @@
 class PostsController < ApplicationController
+  before_filter :signed_in_user, :only => [ :create, :destroy]
+  
+  def show
+    @category = Category.find(params[:category_id])
+    @post = Post.find(params[:id])
+  end
+
   def new
     @category = Category.find(params[:category_id])
   end
@@ -12,4 +19,5 @@ class PostsController < ApplicationController
       render 'new'
     end
   end
+   
 end
