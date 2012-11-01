@@ -4,7 +4,7 @@
 <p><%= 'posted ' + time_ago_in_words(@post.created_at) + ' ago'%> </p>
 <p><%= link_to "Back", category_path(@category), :id => 'back_button'%>
 <% if signed_in? %>
-  <p><%= @post.user.name %></p>
+  <p>posted by: <%= @post.user.name %></p>
   <p><%= button_to "delete", @post, :method=>:delete, :class=>:destroy, :confirm => 'Are you sure?' %>
 <% end %>
         <div id="disqus_thread"></div>
