@@ -1,13 +1,19 @@
-<%= form_for([@category, @category.posts.build]) do |form| %>
+
+NEW POST
+
+<%= form_for @post do |f| %>
   <div class="field">
-    <%= form.label :title %> <br/>
-    <%= form.text_field :title %>
+    <%= f.label :title %> <br/>
+    <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= form.label :content %> <br/>
-    <%= form.text_field :content %>
+    <%= f.label :content %> <br/>
+    <%= f.text_field :content %>
+  </div>
+  <div id="post_category">
+  <%= f.select :category_id, options_for_select( @cat_zip) %>
   </div>
   <div class="actions" id="post_submit">
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>

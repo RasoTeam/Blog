@@ -1,19 +1,19 @@
-			<div id="categories">
-        
-        <div class="category">
-         Hi
-				</div>
-        
+<% @posts.each do |p|  %>
+      <p id="notice"></p>
 
-				<div class="welcome">
-					Welcome, Admin
-				</div>
-				<div class="category">
-					<a href="/posts/new">New Post</a>
-				</div>
-				<div class="category">
-					<a href="/logout" data-method="delete" rel="nofollow">Logout</a>
+      <p>
+            <span class="post-title-text"><%= p.title%></span>
+            <span class="post-title-edit-remove">
+                  <a href="/posts/13/edit">Edit</a>
+                  | <a href="/posts/13" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Delete</a>
+            </span>
+      </p>
 
-				</div>
-			</div>
-
+      <p>
+            <div class="post-content"><%= p.content%></div>
+      </p>
+      <p><%= 'posted ' + time_ago_in_words(p.created_at) + ' ago'%> </p>
+      <%= link_to 'View Comments', category_post_path( p.category, p), :id => 'back_button' %>
+<br/>
+  
+<% end %>

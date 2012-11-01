@@ -13,20 +13,9 @@
       <p>
             <div class="post-content"><%= p.content%></div>
       </p>
-      <br/>
-      <a href="/posts" id="back_button">Back</a>
-      <br/>
-      <%= link_to 'View', category_post_path(@category, p) %>
-DISQUS
-
+      <p><%= 'posted ' + time_ago_in_words(p.created_at) + ' ago'%> </p>
+      <%= link_to 'View Comments', category_post_path(@category, p), :id => 'back_button' %>
+      
 <br/>
-
-  <h2>
-    
-  </h2>
-  <br/><br/>
   
-<% end %>
-<% if signed_in? %>
-  <%= link_to 'New Post', new_category_post_path(@category) %>
 <% end %>
