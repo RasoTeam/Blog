@@ -14,3 +14,7 @@
 /log/*.log
 /tmp
 *.swp
+# Ignore redcar configs
+._redcar/
+
+*~

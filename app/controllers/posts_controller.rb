@@ -12,14 +12,15 @@ class PostsController < ApplicationController
 
   def new
     if signed_in?
-      @category = Category.find(params[:category_id])
+      @cat_zip = Category.pluck( :name).zip( Category.pluck( :id).map(&:to_s))
+      @post = Post.new
     else
       redirect_to root_path
     end
   end
   
   def create
-    @category = Category.find(params[:category_id])
+    @category = Category.find(params[:post][:category_id])
     @post = @category.posts.create(params[:post])
     @post.user_id = current_user.id
     if @post.save 

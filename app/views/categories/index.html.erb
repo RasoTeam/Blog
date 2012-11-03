@@ -1,6 +1,26 @@
-<h1>Categories<h1>
+<% @posts.each do |p|  %>
+      <p id="notice"></p>
 
-<% @categories.each do |c| %>
-  <%= link_to c.name, category_path(c) %>
-  <br/>
+      <p>
+            <span class="post-title-text"><%= p.title%></span>
+            <% if signed_in? %>
+            <span class="post-title-edit-remove">
+                  <a href="/posts/13/edit">Edit</a>
+                  | <a href="/posts/13" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Delete</a>
+            </span>
+            <% end %>
+      </p>
+
+      <p>
+            <div class="post-content"><%= p.content%></div>
+      </p>
+      <div class="date">
+			Posted in <%= p.category.name %> | <%= time_ago_in_words(p.created_at) + ' ago'%>
+    </div>
+      <%= link_to 'View Comments', category_post_path( p.category, p), :id => 'back_button' %>
+<br/>
+  
 <% end %>
+<div class="pagination">
+<%= will_paginate @posts %>
+</div>

@@ -1,16 +1,25 @@
-<h1>
-<%= @category.name %>
-</h1>
-<br/>
 <% @posts.each do |p|  %>
-  <h2>
-    <%= p.title%>
-  </h2>
-  <%= p.content%><br/><br/>
-  <%= link_to 'View', category_post_path(@category, p) %>
-<% end %>
+      <p id="notice"></p>
+
+      <p>
+            <span class="post-title-text"><%= p.title%></span>
+            <% if signed_in? %>
+            <span class="post-title-edit-remove">
+                  <a href="/posts/13/edit">Edit</a>
+                  | <a href="/posts/13" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Delete</a>
+            </span>
+            <% end %>
+      </p>
+
+      <p>
+            <div class="post-content"><%= p.content%></div>
+      </p>
+            <div class="date">
+			Posted in <%= @category.name %> | <%= time_ago_in_words(p.created_at) + ' ago'%>
+    </div>
+      <%= link_to 'View Comments', category_post_path(@category, p), :id => 'back_button' %>
+      
 <br/>
-<br/>
-<% if signed_in? %>
-  <%= link_to 'New Post', new_category_post_path(@category) %>
+  
 <% end %>
+<%= will_paginate @posts %>
