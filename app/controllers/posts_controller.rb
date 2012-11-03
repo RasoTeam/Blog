@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   before_filter :signed_in_user, :only => [ :create, :destroy]
-  
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
   def show
     @category = Category.find(params[:category_id])
     @post = Post.find(params[:id])
