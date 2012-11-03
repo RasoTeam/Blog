@@ -14,8 +14,7 @@
       <p>
             <div class="post-content"><%= p.content%></div>
       </p>
-      <div class="date">
-			Posted in <%= p.category.name %> | <%= time_ago_in_words(p.created_at) + ' ago'%>
+      <div class="date"> Posted in <%= p.category.name %> | <%= time_ago_in_words(p.created_at) + ' ago'%>
     </div>
       <%= link_to 'View Comments', category_post_path( p.category, p), :id => 'back_button' %>
 <br/>

@@ -4,7 +4,7 @@ Blogapp::Application.routes.draw do
   root :to => 'categories#index'
   resources :users 
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :posts, :only => [:create, :destroy, :index]
+  resources :posts
   
   resources :categories do
     resources :posts

@@ -2,7 +2,21 @@ class PostsController < ApplicationController
   before_filter :signed_in_user, :only => [ :create, :destroy]
 
   def edit
+    if signed_in?
+      @cat_zip = Category.pluck( :name).zip( Category.pluck( :id).map(&:to_s))
+      @post = Post.find(params[:id])
+    else
+      redirect_to root_path
+    end
+  end
+
+  def update
     @post = Post.find(params[:id])
+    if @post.update_attributes(params[:post]) 
+      redirect_to @post.category
+    else
+      render 'edit'   
+    end
   end
 
   def show
@@ -31,9 +45,13 @@ class PostsController < ApplicationController
   end
    
   def destroy
-    @post = Post.find(params[:id])
-    c = @post.category_id
-    @post.destroy
-    redirect_to category_path(c)
+    if signed_in? 
+      @post = Post.find(params[:id])
+      c = @post.category_id
+      @post.destroy
+      redirect_to category_path(c)
+    else
+      redirect_to root_path
+    end
   end
 end
