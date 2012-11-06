@@ -54,4 +54,8 @@ class PostsController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def index
+    @posts = Post.paginate(:page => params[:page], :per_page => 4)
+  end
 end

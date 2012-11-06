@@ -1,23 +1,36 @@
-			<div id="categories">
-        <% get_categories.each do |c| %>
-        <div class="category">
-            <%= link_to c.name, category_path(c) %>
-				</div>
-        <% end %>
-        
-        <% if signed_in? %>
-        <div class="welcome">
-          <%= current_user.name %>
-        </div>
-        
-    <div class="category"><%= link_to "Home", categories_path %></div>
-    <div class="category"><%= link_to "Profile", current_user %></div>
-    <div class="category"><%= link_to "Settings", '#' %></div>
-    <div class="category"><%= link_to "New Post", new_category_post_path(get_categories[0]) %></div>
+<div id="categories">
+  <% get_categories.each do |c| %>
     <div class="category">
-    <%=  link_to "Sign out", signout_path, :method => "delete" %>
+      <%= link_to c.name, category_path(c) %>
+	 </div>
+  <% end %>
+
+  <% if signed_in? %>
+    <div class="welcome">
+      <%= current_user.name %>
+    </div>
+        
+    <div class="category">
+      <%= link_to "Home", categories_path %>
+    </div>
+    <div class="category">
+      <%= link_to "Profile", current_user %>
+    </div>
+    <div class="category">
+      <%= link_to "Settings", '#' %>
+    </div>
+    <div class="category">
+      <%= link_to "New Post", new_category_post_path(get_categories[0]) %>
+    </div>
+    <div class="category">
+      <%=  link_to "Sign out", signout_path, :method => "delete" %>
     </div>
   <% else %>
-    <div class="category"><%= link_to "Home", categories_path %></div>
-    <div class="category"><%= link_to "Sign In", signin_path %></div>
+    <div class="category">
+      <%= link_to "Home", root_path %>
+    </div>
+    <div class="category">
+      <%= link_to "Sign In", signin_path %>
+    </div>
   <% end %>
+</div>

@@ -1,0 +1,20 @@
+<% @posts.each do |p|  %>  
+  <div class="post">
+    <div class="post-title">
+      <span class="post-title-text">
+        <%= link_to p.title, category_post_path(p.category, p) %>  
+      </span>
+    </div>
+    <div class="post-content">
+      <%= p.content %>
+    </div>
+    <div class="comment-count">
+      <%= link_to 'comments', category_post_path(p.category, p) %>  
+    </div>
+    <div class="date">
+      <%= p.category.name %> | <%= p.created_at %>
+    </div>
+  </div>
+<% end %>
+<br/>  
+<%= will_paginate @posts %>
