@@ -8,11 +8,11 @@ gem 'will_paginate', '~> 3.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
-  gem 'sqlite3'
+#  gem 'sqlite3'
 end
 
 group :production do
-#  gem 'pg'
+  gem 'pg'
 end
 
 
