@@ -125,15 +125,13 @@ body
 
 .search-button /* botao de search da search-box */
 {
-	background: transparent url(../images/mag_glass_20px.png) no-repeat; 
-	background: transparent url(../images/mag_glass_20px.png) no-repeat; 
+	background: transparent image-url('mag_glass_20px.png') no-repeat; 
 	right: 173px;
 }
 
 .clear-button /* botao de clear da search-box */
 {
-	background: transparent url(close_20px.png) no-repeat;
-	background: transparent url(../images/close_20px.png) no-repeat;
+	background: transparent image_url('close_20px.png') no-repeat;
 	right: 7px;
 }
 

@@ -8,22 +8,20 @@
 </head>
 <body>
   <div id="banner">
-  <%= link_to image_tag('logo.png', :border => 0), root_path %>  
-	</div>
+    <%= link_to image_tag('logo.png', :border => 0), root_path %>  
+  </div>
   <div id="search">
-		<div id="text-box-search">
-			
-			<form accept-charset="UTF-8" action="/search" method="get">
-				<div style="margin:0;padding:0;display:inline">
-					<input name="utf8" type="hidden" value="&#x2713;" />
-				</div>
-				<input id="query" name="query" type="text" />
-				<input class="search-button" name="commit" type="submit" value="Search" />
-				<span class="clear-button" 
-				onclick="var input = document.getElementById('query'); input.value = ''; input.focus(); "></span>
-			</form>
-		</div>
-	</div>
+    <div id="text-box-search">	
+	   <form accept-charset="UTF-8" action="/search" method="get">
+		  <input id="query" name="query" type="text" />
+		  <input class="search-button" name="commit" type="submit" value="Search" />
+		  <span class="clear-button" 
+				  onclick="var input = document.getElementById('query'); 
+              input.value = ''; input.focus(); ">
+        </span>
+		</form>
+	 </div>
+  </div>
   <div id="posts">
     <div id="body-left">
       <%= yield %>
