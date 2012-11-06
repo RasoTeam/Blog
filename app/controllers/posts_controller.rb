@@ -56,6 +56,6 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.paginate(:page => params[:page], :per_page => 4)
+    @posts = Post.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
   end
 end

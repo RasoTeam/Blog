@@ -92,6 +92,11 @@ body
 	color: white;
 }
 
+.user_signin{
+  @extend .category;
+  margin-top: 30px;
+}
+
 #search /* Div da barra azul */
 {
 	height: 45px; /* Altura da barra azul onde se encontra a cx. de pesquisa */
@@ -272,3 +277,5 @@ body
 	width: 50%;
 	margin: 0 auto;
 }
+
+

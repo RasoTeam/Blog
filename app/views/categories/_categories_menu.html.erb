@@ -1,36 +1,34 @@
 <div id="categories">
+  <div class="category" onclick="window.location = '<%= url_for root_path %>'">
+    Home
+  </div>
   <% get_categories.each do |c| %>
-    <div class="category">
-      <%= link_to c.name, category_path(c) %>
+    <div class="category" onclick="window.location = '<%= url_for category_path(c) %>'" >
+     <%= c.name %>
 	 </div>
   <% end %>
 
   <% if signed_in? %>
     <div class="welcome">
-      <%= current_user.name %>
+      Welcome <%= current_user.name %>
     </div>
         
-    <div class="category">
-      <%= link_to "Home", categories_path %>
+    <div class="category" onclick="window.location = '<%= url_for current_user %>'">
+      Profile
     </div>
-    <div class="category">
-      <%= link_to "Profile", current_user %>
+    <div class="category" onclick="window.location = '<%=  %>'">
+      Settings
     </div>
-    <div class="category">
-      <%= link_to "Settings", '#' %>
+    <div class="category" onclick="window.location = 
+                                   '<%= url_for new_category_post_path(get_categories[0]) %>'">
+      New Post
     </div>
-    <div class="category">
-      <%= link_to "New Post", new_category_post_path(get_categories[0]) %>
-    </div>
-    <div class="category">
-      <%=  link_to "Sign out", signout_path, :method => "delete" %>
+    <div class="category" onclick="window.location = '<%= url_for signout_path :method => :destroy  %>'">
+      Sign out
     </div>
   <% else %>
-    <div class="category">
-      <%= link_to "Home", root_path %>
-    </div>
-    <div class="category">
-      <%= link_to "Sign In", signin_path %>
+    <div class="user_signin" onclick="window.location = '<%= url_for signin_path  %>'">
+      Sign In
     </div>
   <% end %>
 </div>
