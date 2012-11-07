@@ -9,35 +9,50 @@ class CategoriesController < ApplicationController
   end
 
   def new
-    @category = Category.new
+    if signed_in?
+      @category = Category.new
+    end
   end
 
   def create
-    @category = Category.new(params[:category])
-    if @category.save
-      redirect_to root_path
+    if signed_in?
+      @category = Category.new(params[:category])
+      if @category.save
+        redirect_to root_path
+      else
+        render 'new'
+      end
     else
-      render 'new'
+      redirect_to root_path
     end
   end
 
   def edit
-    @category = Category.find(params[:id])
+    if signed_in?
+      @category = Category.find(params[:id])
+    end
   end
 
   def update
-    @category = Category.find(params[:id])
-
-    if @category.update_attributes(params[:category])
-      redirect_to root_path
+    if signed_in?
+      @category = Category.find(params[:id])
+      if @category.update_attributes(params[:category])
+        redirect_to root_path
+      else
+        render 'edit'
+      end
     else
-      render 'edit'
+      redirect_to root_path
     end
   end
 
   def destroy
-    @category = Category.find(params[:id])
-    @category.destroy
-    redirect_to categories_path
+    if signed_in?
+      @category = Category.find(params[:id])
+      @category.destroy
+      redirect_to categories_path
+    else
+      redirect_to root_path
+    end
   end
 end

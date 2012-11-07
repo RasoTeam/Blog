@@ -12,10 +12,10 @@
     <% end %>
   </div>
   <div class="post-content">
-    <%= @post.content %>
+    <%= @post.content.html_safe %>
   </div>
   <div class="date">
-    <%= 'posted ' + time_ago_in_words(@post.created_at) + ' ago'%>
+    <%= @post.category.name %> | <%= 'posted ' + time_ago_in_words(@post.created_at) + ' ago'%>
   </div>
   <br/>
   <%= link_to "Back", category_path(@category), :id => 'back_button'%>
