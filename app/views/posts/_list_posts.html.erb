@@ -6,7 +6,10 @@
       </span>
     </div>
     <div class="post-content">
-      <%= p.content %>
+      <%= p.content.html_safe %>
+    </div>
+    <div class="social-icons">
+      <a href="#" style="color: #3b5998">f</a><a href="#" style="color: #00cafb">t</a><a href="#" style="color: #0073b2">m</a><a href="#" style="color: #ff8400">r</a>
     </div>
     <div class="comment-count">
       <%= link_to 'comments', category_post_path(p.category, p) %>  

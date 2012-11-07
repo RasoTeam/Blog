@@ -1,0 +1,12 @@
+<% if signed_in? %>
+  <h1>Categories</h1>
+  <% @categories.each do |c| %>
+    <p> 
+      <%= c.name %>
+      <%= link_to "Edit", edit_category_path(c) %>
+      <%= link_to "Delete", c, :method => :delete, :confirm => "Are you sure?" %>
+    </p>
+  <% end %>
+  <br/>
+  <%= link_to "New Category", new_category_path %>
+<% end %>

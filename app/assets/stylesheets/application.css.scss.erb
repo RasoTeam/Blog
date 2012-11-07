@@ -16,8 +16,14 @@ body
 	margin: 0px;
 	background-repeat: repeat;
 	background-image: url('back.png'); /* Padrao fundo */
+   line-height: 18px;
 }
 
+@font-face{
+  font-family: Socialico;
+  src: url('<%= asset_path('socialico.ttf') %>');
+  /*src: url('fonts/socialico.ttf');*/
+}
 
 #banner /* Div zona do Banner`*/ 
 {
@@ -158,11 +164,11 @@ body
 
 .social-icons
 {
-   /* font-family: 'Socialico'; */
+   font-family: 'Socialico';
 	font-size: 22pt;
 	margin-top: 15px;
 	float: left;
-	/*text-decoration: none;*/
+	text-decoration: none;
 }
 
 .social-icons a,
@@ -267,7 +273,7 @@ body
 .post
 {
 	margin-bottom: 20px;
-	padding-bottom: 50px;
+	padding-bottom: 60px;
 	border-bottom: 1px white solid;
 }
 
@@ -277,5 +283,4 @@ body
 	width: 50%;
 	margin: 0 auto;
 }
-
 

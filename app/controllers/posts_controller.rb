@@ -3,8 +3,8 @@ class PostsController < ApplicationController
 
   def edit
     if signed_in?
-      @cat_zip = Category.pluck( :name).zip( Category.pluck( :id).map(&:to_s))
       @post = Post.find(params[:id])
+      @cat_zip = Category.pluck( :name).zip( Category.pluck( :id).map(&:to_s))
     else
       redirect_to root_path
     end

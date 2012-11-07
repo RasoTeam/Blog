@@ -23,6 +23,9 @@
                                    '<%= url_for new_category_post_path(get_categories[0]) %>'">
       New Post
     </div>
+    <div class="category" onclick="window.location = '<%= categories_path %>'">
+      Categories
+    </div>
     <div class="category" onclick="window.location = '<%= url_for signout_path :method => :destroy  %>'">
       Sign out
     </div>

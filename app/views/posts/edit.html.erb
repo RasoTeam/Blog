@@ -1,16 +1,2 @@
-<%= form_for @post do |f| %>
-  <div class="field">
-    <%= f.label :title %> <br/>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %> <br/>
-    <%= f.text_field :content %>
-  </div>
-  <div id="post_category">
-    <%= f.select :category_id, options_for_select( @cat_zip) %>
-  </div>
-  <div class="actions" id="post_submit">
-    <%= f.submit %>
-  </div>
-<% end %>
+EDIT
+<%= render 'form' %>
