@@ -18,6 +18,11 @@ body
 	background-image: url('back.png'); /* Padrao fundo */
 }
 
+@font-face{
+  font-family: Socialico;
+  src: url("<%= asset_path('socialico.ttf') %>");
+  /* src: local('socialico'), url('fonts/socialico.ttf') format('truetype'); */
+}
 
 #banner /* Div zona do Banner`*/ 
 {
