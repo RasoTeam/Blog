@@ -43,6 +43,11 @@ class PostsController < ApplicationController
       render 'new'
     end
   end
+  
+  def search
+    q = params[:post][:content]
+    @post = Post.find( :all, :conditions => ["content LIKE ?", q])
+  end
    
   def destroy
     if signed_in? 

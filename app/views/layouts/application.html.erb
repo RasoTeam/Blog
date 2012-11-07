@@ -11,15 +11,13 @@
     <%= link_to image_tag('logo.png', :border => 0), root_path %>  
   </div>
   <div id="search">
-    <div id="text-box-search">	
-	   <form accept-charset="UTF-8" action="/search" method="get">
-		  <input id="query" name="query" type="text" />
-		  <input class="search-button" name="commit" type="submit" value="Search" />
-		  <span class="clear-button" 
-				  onclick="var input = document.getElementById('query'); 
-              input.value = ''; input.focus(); ">
-        </span>
-		</form>
+    <div id="text-box-search">
+			<%= form_tag(url_for(:controller => 'search', :action => 'search'), :method => "get") do %>
+				<%= text_field_tag(:query) %>
+				<%= submit_tag("Search", :class => "search-button")  %>
+				<span class="clear-button" 
+				onclick="var input = document.getElementById('query'); input.value = ''; input.focus(); "></span>
+			<% end %>
 	 </div>
   </div>
   <div id="posts">

@@ -10,6 +10,8 @@ Blogapp::Application.routes.draw do
     resources :posts
   end
   
+  match '/search', :to => 'search#search'  
+  
   match '/signin', :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
 
