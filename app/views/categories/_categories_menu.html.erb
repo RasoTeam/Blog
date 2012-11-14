@@ -29,9 +29,5 @@
     <div class="category" onclick="window.location = '<%= url_for signout_path :method => :destroy  %>'">
       Sign out
     </div>
-  <% else %>
-    <div class="user_signin" onclick="window.location = '<%= url_for signin_path  %>'">
-      Sign In
-    </div>
   <% end %>
 </div>
