@@ -16,5 +16,5 @@
 *.swp
 # Ignore redcar configs
 ._redcar/
-
+.DS_store
 *~
