@@ -12,7 +12,7 @@
       <a href="#" style="color: #3b5998">f</a><a href="#" style="color: #00cafb">t</a><a href="#" style="color: #0073b2">m</a><a href="#" style="color: #ff8400">r</a>
     </div>
     <div class="comment-count">
-      <%= link_to 'comments', category_post_path(p.category, p) %>  
+      <%= link_to 'Comments', category_post_path(p.category, p, :anchor => 'disqus_thread') %>
     </div>
     <div class="date">
       <%= p.category.name %> | <%= p.created_at %>
