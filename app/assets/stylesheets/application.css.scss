@@ -19,15 +19,32 @@ body
    line-height: 18px;
 }
 
-@font-face{
-  font-family: Socialico;
-  src: url('<%= asset_path('socialico.ttf') %>');
-  /*src: url('fonts/socialico.ttf');*/
+@font-face {
+	font-family: 'Socialico';
+	src: font-url('socialico.ttf');
+	src: font-url('socialico.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
 
 #banner /* Div zona do Banner`*/ 
 {
-	height: 122px; /* Altura da zona do Banner */
+	height: 120px; /* Altura da zona do Banner */
+	position: relative;
+
+	#logo
+	{
+		background-color: white;
+		margin-top: 20px;
+		padding: 15px;
+		width: 230px;		
+  		-webkit-box-shadow: 0 2px 10px rgba(0,0,0, 0.7);   // sombra
+	  	-moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+	  	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+  		-webkit-border-radius: 2px;
+        		border-radius: 2px; 
+  		-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+	}
 }
 
 #banner a,
@@ -38,32 +55,33 @@ body
 	background-color: transparent;
 }
 
-/*#categories
+#categories
 {
-	margin-top: 10px;
-}*/
+	//margin-top: 15px;
+}
 
 #body-left
 {
-	width: 536px;
+	width: 500px;
 	float: left;
-	background-color: #d4d4d4;
+	//background-color: #d4d4d4;
 	padding: 25px;
 	margin-bottom: 10px;
 }
 
 #body-right
 {
-	width: 200px;
+	width: 250px;
 	float: right;
-	/*background-color: #d4d4d4;*/
+	//background-color: #d4d4d4;
 	min-height: 500px;
+	padding-top: 25px;
 }
 
 .category
 {
-	background-color: #b7b7b7;
-	font-family: 'Comfortaa', cursive;
+	background-color: #999;
+	font-family: 'Fjalla One', sans-serif;
 	font-size: 12pt;
 	margin-bottom: 3px;
 	padding: 8px;
@@ -71,12 +89,53 @@ body
 	-webkit-transition-duration: 0.2s;
     -moz-transition-duration: 0.2s;
     transition-duration: 0.2s; /* transicao entre hover ou nao */
-    border-bottom: 2px solid white;
+  	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+
+  	font-size: 16px !important;
+	 /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+
+	 width: 204px;
+	    
+	 position: relative;
+	 text-align: left;
+	 padding-left: 15px;
+	 padding-right: 40px;
+	 margin: 5px 0px 10px; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+
+}
+
+
+.category:before {
+	 left: -2em;
+	 border-right-width: 1.5em;
+	 border-left-color: transparent;
+}
+.category:after {
+	right: -2em;
+	border-left-width: 1.5em;
+	border-right-color: transparent;
+}
+.category .ribbon-content:after {
+	content: "";
+	position: absolute;
+	display: block;
+	border-style: solid;
+	border-color: #5F5F5F transparent transparent transparent;
+	bottom: -1em;
+}
+.category .ribbon-content:before {
+	left: 0;
+	border-width: 1em 0 0 1em;
+}
+.category .ribbon-content:after {
+	right: 0;
+	border-width: 8px 9px 8px 0;
 }
 
 .category:hover
 {
 	background-color: #7A7979;
+	color: white;
 }
 .category:hover a,
 .category:hover a:visited
@@ -107,6 +166,17 @@ body
 	height: 45px; /* Altura da barra azul onde se encontra a cx. de pesquisa */
 	background-color: #61add1;
 	text-align: right; /* Alinhamento da cx. de pesquisa à direita */
+	-webkit-box-shadow: 0 2px 10px rgba(0,0,0, 0.7);   // sombra
+	-moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+	border-top: solid 135px #535353;
+	margin-top: -140px;
+}
+
+#posts
+{
+	background-color: #D4D4D4;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
 #banner, #posts, #text-box-search /* Aplicado aos 3 elementos */
@@ -136,7 +206,7 @@ body
 .search-button /* botao de search da search-box */
 {
 	background: transparent image-url('mag_glass_20px.png') no-repeat; 
-	right: 173px;
+	right: 222px;
 }
 
 .clear-button /* botao de clear da search-box */
@@ -148,12 +218,15 @@ body
 #query /* text-field da search-box */
 {
 	height: 24px;
-	width: 140px; /* Largura total = 140px + paddings (30+30) = 200px */
+	width: 190px; /* Largura total = 140px + paddings (30+30) = 200px */
 	padding-left: 30px; /* Espacamento para icone de search */
 	padding-right: 30px; /* Espacamento para icone de clear */
 	//border-radius: 13px; /* Cantos arredondados */
 	//-moz-border-radius: 13px; /* Cantos arredondados Firefox */
 	border: 0px; /* Remocao da Border */
+	-webkit-border-radius: 2px;
+    border-radius: 2px; 
+  	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
 }
 
 #posts

@@ -1,10 +1,14 @@
 <div id="categories">
   <div class="category" onclick="window.location = '<%= url_for root_path %>'">
-    Home
+    <span class="ribbon-content">
+      Home
+    </span>
   </div>
   <% get_categories.each do |c| %>
     <div class="category" onclick="window.location = '<%= url_for category_path(c) %>'" >
-     <%= c.name %>
+      <span class="ribbon-content">
+        <%= c.name %>
+      </span>
 	 </div>
   <% end %>
 
@@ -14,20 +18,30 @@
     </div>
         
     <div class="category" onclick="window.location = '<%= url_for current_user %>'">
-      Profile
+      <span class="ribbon-content">
+        Profile
+      </span>
     </div>
     <div class="category" onclick="window.location = '<%=  %>'">
-      Settings
+      <span class="ribbon-content">
+        Settings
+      </span>
     </div>
     <div class="category" onclick="window.location = 
                                    '<%= url_for new_category_post_path(get_categories[0]) %>'">
-      New Post
+      <span class="ribbon-content">
+        New Post
+      </span>
     </div>
     <div class="category" onclick="window.location = '<%= categories_path %>'">
-      Categories
+      <span class="ribbon-content">
+        Categories
+      </span>
     </div>
     <div class="category" onclick="window.location = '<%= url_for signout_path :method => :destroy  %>'">
-      Sign out
+      <span class="ribbon-content">
+        Sign out
+      </span>
     </div>
   <% end %>
 </div>
