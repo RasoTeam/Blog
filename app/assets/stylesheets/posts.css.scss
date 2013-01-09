@@ -98,7 +98,17 @@
 
 #new_post, .edit_post
 {
-	text-align: center;
+	text-align: left;
+
+	label
+	{
+		font-family: 'Fjalla One', sans-serif;
+	}
+
+	.field
+	{
+		margin-top: 10px;
+	}
 }
 
 #post_title
@@ -125,7 +135,7 @@
 {
 	font-size: 13pt;
 	padding: 5px;
-	margin-left: 15px;
+	//margin-left: 15px;
 }
 
 .error_list

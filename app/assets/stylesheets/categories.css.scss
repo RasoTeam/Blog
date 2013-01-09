@@ -1,3 +1,29 @@
 // Place all the styles related to the Categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.categories
+{
+	font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+	font-size: 10pt;
+
+	h1
+	{
+		font-family: 'Fjalla One', sans-serif;
+	}
+
+	table
+	{
+		th
+		{
+			text-align: left;
+			padding: 3px;
+		}
+
+		td
+		{
+			padding: 3px;
+		}
+	}
+}

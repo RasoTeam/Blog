@@ -1,12 +1,21 @@
 <% if signed_in? %>
   <h1>Categories</h1>
-  <% @categories.each do |c| %>
-    <p> 
-      <%= c.name %>
-      <%= link_to "Edit", edit_category_path(c) %>
-      <%= link_to "Delete", c, :method => :delete, :confirm => "Are you sure?" %>
-    </p>
-  <% end %>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </thead>
+    <tbody>
+      <% @categories.each do |c| %>
+        <tr>
+          <td><%= c.name %></td>
+          <td><%= link_to "Edit", edit_category_path(c) %></td>
+          <td><%= link_to "Delete", c, :method => :delete, :confirm => "Are you sure?" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
   <br/>
   <%= link_to "New Category", new_category_path %>
 <% end %>
